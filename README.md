@@ -2,4 +2,4 @@
 # SparkPost Gists and Code Snippets Repository
 A repository with helpful programming resources for SparkPost developers.
 
-[Sign up for a SparkPost account](https://sparkpost/com) today and discover why SparkPost is the developer's choice for sending email successfully.
+[Sign up for a SparkPost account](https://sparkpost.com) today and discover why SparkPost is the developer's choice for sending email successfully.
