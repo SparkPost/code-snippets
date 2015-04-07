@@ -1,0 +1,4 @@
+curl \
+-H "Authorization: 14ac5499cfdd2bb2859e4476d2e5b1d2bad079bf" \
+-H "Accept: application/json" \
+https://api.sparkpost.com/api/v1/metrics/deliverability/rejection-reason?from=<YYYY-MM-DD>T<HH>%3A<MM>&to=<YYYY-MM-DD>T<HH>%3A<MM>&domains=<LIST_OF_DOMAINS_TO_INCLUDE>&campaigns=<LIST_OF_CAMPAIGNS_TO_INCLUDE>&templates=<LIST_OF_TEMPLATE_IDS_TO_INCLUDE>&sandbox=<TRUE||FALSE>&metrics=<LIST_OF_METRICS_FOR_FILTERING>&timezone=<STANDARD_TIMEZONE_IDENTIFICATION_STRING>&limit=<MAX_NUMBER_OF_RESULTS_TO_RETURN>
