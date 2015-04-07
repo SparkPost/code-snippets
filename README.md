@@ -16,8 +16,8 @@ These code assets provide developers examples for possible solutions while imple
 
 This is a library of cURL examples which can be used by developers while testing or debugging their SparkPost API Requests.
 
-## [Adding Issues](/docs/ADDING_ISSUES.markdown)
+### [Adding Issues](/docs/ADDING_ISSUES.markdown)
 
-## [Contributions](/docs/CONTRIBUTING.markdown)
+### [Contributions](/docs/CONTRIBUTING.markdown)
 
-## [LICENSE](/LICENSE)
+### [LICENSE](/LICENSE)
