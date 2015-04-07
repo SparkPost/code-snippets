@@ -1,0 +1,17 @@
+curl  \
+-H "Content-Type: application/json" \
+-H "Authorization: <YOUR_SPARKPOST_API_KEY_HERE>" \
+-X PUT -d "{
+\"recipients\": [
+  {
+    \"email\": \"rcpt_1@example.com\",
+    \"transactional\": true,
+    \"description\": \"User requested to not receive any transactional emails.\"
+  },
+  {
+    \"email\": \"rcpt_2@example.com\",
+    \"non_transactional\": true
+      }
+    ]
+}" \
+https://api.sparkpost.com/api/v1/suppression-list/<RECIPIENT_EMAIL_ADDRESS_HERE>

@@ -1,0 +1,64 @@
+curl \
+-H "Content-Type: application/json" \
+-H "Authorization: 14ac5499cfdd2bb2859e4476d2e5b1d2bad079bf" \
+-X POST -d "{
+  \"id\": \"unique_id_4_graduate_students_list\",
+  \"name\": \"graduate_students\",
+  \"description\": \"An email list of graduate students at UMBC\",
+  \"attributes\": {
+      \"internal_id\": 112,
+      \"list_group_id\": 12321
+  },
+  \"recipients\": [
+      {
+          \"return_path\": \"return-path-wilmaflin@tstone.com\",
+          \"address\": {
+              \"email\": \"wilmaflin@yahoo.com\",
+              \"name\": \"Wilma\"
+          },
+          \"metadata\": {
+              \"place\": \"Bedrock\"
+          },
+          \"substitution_data\": {
+              \"subrcptkey\": \"subrcptvalue\"
+          },
+          \"tags\": [
+              \"greeting\",
+              \"prehistoric\",
+              \"fred\",
+              \"flintstone\"
+          ]
+      },
+      {
+          \"return_path\": \"return-path-abc@tstone.com\",
+          \"address\": {
+              \"email\": \"abc@flintstone.com\",
+              \"name\": \"ABC\"
+          },
+          \"metadata\": {
+              \"place\": \"MD\"
+          },
+          \"tags\": [
+              \"driver\",
+              \"computer science\",
+              \"fred\",
+              \"flintstone\"
+          ]
+      },
+      {
+          \"return_path\": \"return-path-def@tstone.com\",
+          \"address\": {
+              \"email\": \"fred.jones@flintstone.com\",
+              \"name\": \"Grad Student Office\",
+              \"header_to\": \"grad-student-office@flintstone.com\"
+          },
+          \"tags\": [
+              \"driver\",
+              \"computer science\",
+              \"fred\",
+              \"flintstone\"
+          ]
+      }
+  ]
+}" \
+https://api.sparkpost.com/api/v1/recipient-lists

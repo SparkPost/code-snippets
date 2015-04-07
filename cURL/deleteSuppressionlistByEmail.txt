@@ -1,0 +1,5 @@
+curl  \
+-H "Content-Type: application/json" \
+-H "Authorization: <YOUR_SPARKPOST_API_KEY_HERE>" \
+-X DELETE
+https://api.sparkpost.com/api/v1/suppression-list/<RECIPIENT_EMAIL_ADDRESS>

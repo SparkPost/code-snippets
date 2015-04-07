@@ -1,0 +1,4 @@
+curl \
+-H "Authorization: <YOUR_SPARKPOST_API_KEY_HERE>" \
+-H "Accept: application/json" \
+https://api.sparkpost.com/api/v1/recipient-lists[/ID_OR_NAME_OF_RECIPIENT_LIST]
