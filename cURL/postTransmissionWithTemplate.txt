@@ -1,5 +1,5 @@
 curl \
 -H "Content-Type: application/json" \
 -H "Authorization: <REPLACE_WITH_YOUR_API_KEY>" \
--X POST -d '{"options":{"open_tracking":true,"click_tracking":true},"metadata":{"some_useful_metadata":"testing_sparkpost"},"substitution_data":{"signature":"<REPLACE_WITH_YOUR_FIRST_AND_LAST_NAME>"},"recipients":[{"address":{"email":"<REPLACE_WITH_YOUR_EMAIL_ADDRESS>"},"tags":["learning"],"substitution_data":{"customer_type":"Platinum","first_name":"<REPLACE_WITH_YOUR_FIRST_NAME>"}}],"content":{"template_id":"test-template"}}' \
+-X POST -d '{"options":{"open_tracking":true,"click_tracking":true},"metadata":{"some_useful_metadata":"testing_sparkpost"},"substitution_data":{"signature":"<REPLACE_WITH_YOUR_FIRST_AND_LAST_NAME>"},"recipients":[{"address":{"email":"<REPLACE_WITH_YOUR_EMAIL_ADDRESS>"},"tags":["learning"],"substitution_data":{"customer_type":"Platinum","first_name":"<REPLACE_WITH_YOUR_FIRST_NAME>"}}],"content":{"template_id":"<REPLACE_WITH_YOUR_TEMPLATE_ID"}}' \
 https://api.sparkpost.com/api/v1/transmissions
