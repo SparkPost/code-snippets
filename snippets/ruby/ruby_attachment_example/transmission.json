@@ -1,0 +1,25 @@
+{
+   "options":{
+      "open_tracking":true,
+      "click_tracking":true,
+      "transactional":false,
+      "sandbox":false,
+      "skip_suppression":false
+   },
+   "campaign_id":"Some CampaignId",
+   "substitution_data":{
+      "subject":"[TEST]",
+      "from":"",
+      "custom_html":"Hello World with attachment"
+   },
+   "recipients":[
+      {
+         "address":{
+            "email":""
+         }
+      }
+   ],
+   "content":{
+      "email_rfc822":""
+   }
+}
