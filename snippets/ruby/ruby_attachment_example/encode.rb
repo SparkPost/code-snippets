@@ -20,9 +20,9 @@ TRANSMISSION_URL='https://api.sparkpost.com/api/v1/transmissions'
 
 SUBJECT='[TEST] Subject of Message' 
 
-RECIPIENT='chris.wilson@messagesystems.com'
+RECIPIENT='recipient@example.com'
 
-FROM='chrisw@test.yepher.com'
+FROM='from_address@example.com'
 
 HTML_CONTENT='Sample email content from JSON'
 
@@ -33,7 +33,6 @@ HTML_CONTENT='Sample email content from JSON'
 if (API_AUTH_KEY == 'PUT_YOUR_API_KEY_HERE') 
     abort("You must set your API Key in 'encode.rb' before an email can be sent.")
 end
-
 
 
 ############################
