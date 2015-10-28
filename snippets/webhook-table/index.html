@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+    <script type="text/javascript" src="fetch.js"></script>
+    <script id="event-type-template" type="text/x-handlebars-template">
+      <table id="event-types">
+        <thead>
+          <tr>
+            <td>Event Type</td>
+            <td>JSON Key</td>
+            <td>Description</td>
+            <td>Events</td>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each this}}
+          <tr>
+            <td>{{ name }}</td>
+            <td>{{ key }}</td>
+            <td>{{ description }}</td>
+            <td>{{ events }}</td>
+
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </script>
+    <script id="events-template" type="text/x-handlebars-template">
+      <table id="events">
+        <thead>
+          <tr>
+            <td>Event</td>
+            <td>JSON Key</td>
+            <td>Description</td>
+            <td>Event Properties(full description below)</td>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each this}}
+          <tr>
+            <td>{{ name }}</td>
+            <td>{{ key }}</td>
+            <td>{{ description }}</td>
+            <td>{{ props }}</td>
+
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </script>
+    <script id="event-props-template" type="text/x-handlebars-template">
+      <table id="properties">
+        <thead>
+          <tr>
+            <td>JSON Key</td>
+            <td>Description</td>
+            <td>Sample Value</td>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each this}}
+          <tr>
+            <td>{{ key }}</td>
+            <td>{{ description }}</td>
+            <td>{{ sample }}</td>
+
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </script>
+  </head>
+  <body>
+    <div id="content"></div>
+  </body>
+</html>
+
