@@ -1,23 +1,14 @@
-![SparkPost.com](https://avatars3.githubusercontent.com/u/9406778?v=3&s=200)
-# SparkPost Gists and Code Snippets Repository
+<a href="https://www.sparkpost.com"><img src="https://www.sparkpost.com/sites/default/files/attachments/SparkPost_Logo_2-Color_Gray-Orange_RGB.svg" width="200px"/></a>
+
+[Sign up](https://app.sparkpost.com/sign-up?src=Dev-Website&sfdcid=70160000000pqBb) for a SparkPost account and visit our [Developer Hub](https://developers.sparkpost.com) for even more content.
+
+# SparkPost Code Snippets
 A repository with helpful programming resources for SparkPost developers.
-
-[Sign up for a SparkPost account](https://sparkpost.com) today and discover why SparkPost is the developer's choice for sending email successfully.
-
-## [Gists](/gists)
-
-Code examples to resolve use-case specific issues or for reference while answering questions in public that might help other developers.
 
 ## [Code Snippets](/snippets)
 
-These code assets provide developers examples for possible solutions while implementing SparkPost into their web and mobile applications.
+These code snippets provide examples for possible solutions using SparkPost.
 
 ## [cURL Examples](/cURL)
 
-This is a library of cURL examples which can be used by developers while testing or debugging their SparkPost API Requests.
-
-### [Adding Issues](/docs/ADDING_ISSUES.markdown)
-
-### [Contributions](/docs/CONTRIBUTING.markdown)
-
-### [LICENSE](/LICENSE)
+This is a library of cURL examples for testing or debugging SparkPost API requests.
