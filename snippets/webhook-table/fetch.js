@@ -1,10 +1,11 @@
+/*jshint -W106 */
 function formatEventTypes(data) {
   return _.map(data, function(value, key) {
     return {
       'name': value.display_name,
       'key': key,
       'description': value.description,
-      'events' : _.map(value.events, function(value, key) { return value.display_name; }).join(', ')
+      'events' : _.map(value.events, function(value) { return value.display_name; }).join(', ')
     };
   });
 }
@@ -13,7 +14,7 @@ function formatEvents(data) {
   var eventData = []
     , props = [];
   // Format the data for the event metadata
-  _.forEach(data, function(value, key) {
+  _.forEach(data, function(value) {
     var events = _.map(value.events, function(event, key) {
       props.push(event.event);
       return {
@@ -33,7 +34,7 @@ function formatEvents(data) {
 
 function getUniqueProperties(data) {
   var properties = [];
-  _.forEach(data, function(value, key) {
+  _.forEach(data, function(value) {
     _.forEach(value, function(v, k) {
       properties.push(k);
     });
@@ -46,7 +47,7 @@ function formatProperties(data) {
   var props = getUniqueProperties(data)
     , properties = [];
 
-  _.forEach(data, function(value, key) {
+  _.forEach(data, function(value) {
     _.forEach(value, function(v, k) {
       // Check to see if we have processed this property
       var index = props.indexOf(k);
@@ -77,13 +78,12 @@ $(document).ready(function () {
     , propsTemplate = Handlebars.compile(properties)
     , placeholder = $('#content');
 
-  $.get('https://api.sparkpost.com/api/v1/webhooks/events/documentation', function(data,status,xhr){
+  $.get('https://api.sparkpost.com/api/v1/webhooks/events/documentation', function(data){
     // Format the data for the types
     var typeData = formatEventTypes(data.results)
       , html = typesTemplate(typeData)
       , eventData = formatEvents(data.results)
       , eventsHtml = eventsTemplate(eventData.events)
-      , props = getUniqueProperties(eventData.props)
       , eventProps = formatProperties(eventData.props)
       , propsHtml = propsTemplate(eventProps);
 
