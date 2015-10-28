@@ -76,7 +76,9 @@ $(document).ready(function () {
     , eventsTemplate = Handlebars.compile(webhookEventsTemplate)
     , properties = $('#event-props-template').html()
     , propsTemplate = Handlebars.compile(properties)
-    , placeholder = $('#content');
+    , eventTypesContainer = $('#content-event-types')
+    , eventsContainer = $('#content-events')
+    , eventPropsContainer = $('#content-event-props');
 
   $.get('https://api.sparkpost.com/api/v1/webhooks/events/documentation', function(data){
     // Format the data for the types
@@ -87,8 +89,8 @@ $(document).ready(function () {
       , eventProps = formatProperties(eventData.props)
       , propsHtml = propsTemplate(eventProps);
 
-    placeholder.append(html);
-    placeholder.append(eventsHtml);
-    placeholder.append(propsHtml);
+    eventTypesContainer.append(html);
+    eventsContainer.append(eventsHtml);
+    eventPropsContainer.append(propsHtml);
   });
 });
