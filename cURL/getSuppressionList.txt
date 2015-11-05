@@ -1,4 +1,4 @@
 curl \
 -H "Content-Type: application/json" \
--H "Authorization: REPLACE_WITH_YOUR_API_KEY_HERE" \
+-H "Authorization: <YOUR_SPARKPOST_API_KEY_HERE>" \
 https://api.sparkpost.com/api/v1/suppression-list
