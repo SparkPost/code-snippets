@@ -13,10 +13,18 @@ my $mailer = new Net::SMTP(
   Debug => 1);
 
 $mailer->starttls();
+
+# You will need an API Key with 'Send via SMTP' permissions.
+# Create one here: https://app.sparkpost.com/account/credentials
 $mailer->auth('SMTP_Injection', '<YOUR API KEY>');
 
+# sparkpostbox.com is a sending domain used for testing
+# purposes and is limited to 50 messages per account.
+# Visit https://app.sparkpost.com/account/sending-domains
+# to register and verify your own sending domain.
 my $from = 'testing@sparkpostbox.com';
-my $to   = 'developers@sparkpost.com';
+
+my $to = 'recipient@example.com';
 
 $mailer->mail($from);
 $mailer->to($to);
