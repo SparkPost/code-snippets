@@ -1,0 +1,2 @@
+defmodule MyApp do
+end

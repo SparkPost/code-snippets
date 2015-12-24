@@ -1,0 +1,11 @@
+%{"certifi": {:hex, :certifi, "0.3.0"},
+  "earmark": {:hex, :earmark, "0.1.19"},
+  "eiconv": {:git, "https://github.com/zotonic/eiconv.git", "644fb5e7bd6640fbd073f4d28957914ea979aea0", []},
+  "ex_doc": {:hex, :ex_doc, "0.11.2"},
+  "gen_smtp": {:hex, :gen_smtp, "0.9.0"},
+  "hackney": {:hex, :hackney, "1.4.7"},
+  "httpoison": {:hex, :httpoison, "0.8.0"},
+  "idna": {:hex, :idna, "1.0.2"},
+  "mailman": {:hex, :mailman, "0.2.1"},
+  "mimerl": {:hex, :mimerl, "1.0.2"},
+  "ssl_verify_hostname": {:hex, :ssl_verify_hostname, "1.0.5"}}
