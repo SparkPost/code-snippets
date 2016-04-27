@@ -29,6 +29,7 @@ $mail->setFrom('testing@sparkpostbox.com');
 $mail->addAddress('recipient@example.com');
 $mail->Subject = 'Testing SparkPost SMTP from PHP!';
 $mail->Body    = 'Hello World!';
+$mail->addCustomHeader('X-MSYS-API', '{"campaign_id" : "PHPExample"}');
 
 if (!$mail->send()) {
   echo "Message could not be sent\n";
