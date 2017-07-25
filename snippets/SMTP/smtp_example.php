@@ -21,7 +21,7 @@ $mail->Username = 'SMTP_Injection';
 $mail->Password = '<YOUR API KEY>';
 
 // sparkpostbox.com is a sending domain used for testing
-// purposes and is limited to 50 messages per account.
+// purposes and is limited to 5 messages per account.
 // Visit https://app.sparkpost.com/account/sending-domains
 // to register and verify your own sending domain.
 $mail->setFrom('testing@sparkpostbox.com');
