@@ -4,6 +4,16 @@
 
 # [Recipient Validation Examples](/snippets/recipient-validation)
 
-Set environment variable `SPARKPOST_API_KEY` prior to running an example.
+Set environment variable `SPARKPOST_API_KEY` prior to running - for example:
+
+```
+export SPARKPOST_API_KEY="###YOUR API KEY HERE###"
+```
+
+```
+./validateRecipient.py
+
+{'results': {'valid': False, 'is_role': True, 'is_disposable': False, 'is_free': True, 'reason': 'Invalid Recipient', 'result': 'undeliverable'}}
+```
 
 See [SparkPost documentation](https://www.sparkpost.com/docs/recipient-validation/integration-guide/) for more information on how to use Recipient Validation.
