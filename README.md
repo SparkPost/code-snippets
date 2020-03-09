@@ -12,3 +12,7 @@ These code snippets provide examples for possible solutions using SparkPost.
 ## [cURL Examples](/cURL)
 
 This is a library of cURL examples for testing or debugging SparkPost API requests.
+
+## [Recipient Validation Examples](/snippets/recipient-validation)
+
+These show how to call the Recipient Validation API in various languages.
