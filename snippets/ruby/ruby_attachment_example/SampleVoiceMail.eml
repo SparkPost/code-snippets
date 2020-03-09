@@ -1,0 +1,34 @@
+Precedence: bulk
+X-Binding: Transactional
+List-Unsubscribe:{{address.email}}
+From:{{from}}
+Reply-To:{{replyto}}
+Subject:{{subject}}
+To: {{address.email}}
+Content-Language: en-US
+Content-Type: multipart/mixed; boundary=001a113992ae8f37f9051edc4b18
+MIME-Version: 1.0
+
+--001a113992ae8f37f9051edc4b18
+Content-Type: multipart/alternative; boundary=001a113992ae8f37eb051edc4b16
+
+--001a113992ae8f37eb051edc4b16
+Content-Type: text/plain; charset=UTF-8
+
+This is a test part
+
+--001a113992ae8f37eb051edc4b16
+Content-Type: text/html; charset=UTF-8
+
+<body>
+{{{ custom_html }}}
+</body>
+
+--001a113992ae8f37eb051edc4b16--
+--001a113992ae8f37f9051edc4b18
+Content-Type: audio/x-wav; name="SampleVoiceMail.wav"
+Content-Disposition: attachment; filename="SampleVoiceMail.wav"
+Content-Transfer-Encoding: base64
+
+{{B64_VOICEMAIL_DATA}}
+--001a113992ae8f37f9051edc4b18--
