@@ -1,6 +1,5 @@
 <?php
 // API call example. See https://www.sparkpost.com/docs/recipient-validation/integration-guide/
-
 // set to api.eu.sparkpost.com for EU accounts
 $url = "https://api.sparkpost.com/api/v1/recipient-validation/single/";
 
