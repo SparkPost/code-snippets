@@ -21,7 +21,6 @@ namespace recipient_validation
 
             try
             {
-                using var client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Authorization", apiKey);
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
 
