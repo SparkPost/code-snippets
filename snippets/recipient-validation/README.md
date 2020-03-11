@@ -32,10 +32,24 @@ python3 validateRecipient.py
 ```
 
 ## Node.js
-Uses the older [request](https://www.npmjs.com/package/request) module:
+Shows both the older [request](https://www.npmjs.com/package/request) package and the newer [axios](https://www.npmjs.com/package/axios) package.
 
 ```
-node validateRecipient.js
+ node validateRecipient.js
+
+Axios:
+{
+  results: {
+    valid: false,
+    is_role: true,
+    is_disposable: false,
+    is_free: true,
+    reason: 'Invalid Recipient',
+    result: 'undeliverable'
+  }
+}
+
+Request:
 error: null
 statusCode: 200
 body: {"results":{"valid":false,"is_role":true,"is_disposable":false,"is_free":true,"reason":"Invalid Recipient","result":"undeliverable"}}
