@@ -1,2 +1,4 @@
 .vscode/launch.json
 snippets/recipient-validation/setenvs.sh
+snippets/recipient-validation/node_modules
+snippets/recipient-validation/Pipfile.lock

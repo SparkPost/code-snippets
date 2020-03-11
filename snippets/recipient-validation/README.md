@@ -4,16 +4,41 @@
 
 # [Recipient Validation Examples](/snippets/recipient-validation)
 
-Set environment variable `SPARKPOST_API_KEY` prior to running - for example:
+Set environment variable `SPARKPOST_API_KEY` prior to running.
 
 ```
 export SPARKPOST_API_KEY="###YOUR API KEY HERE###"
 ```
 
-```
-./validateRecipient.py
+Each example prints the results in that language's native format.
 
+## Bash script (`curl`)
+```
+./validateRecipient.sh
+{"results":{"valid":false,"is_role":true,"is_disposable":false,"is_free":true,"reason":"Invalid Recipient","result":"undeliverable"}}
+```
+
+## PHP
+```
+php validateRecipient.php
+string(133) "{"results":{"valid":false,"is_role":true,"is_disposable":false,"is_free":true,"reason":"Invalid Recipient","result":"undeliverable"}}"
+```
+
+## Python
+Uses [requests](https://requests.readthedocs.io/en/master/) module; See `Pipfile`.
+```
+python3 validateRecipient.py
 {'results': {'valid': False, 'is_role': True, 'is_disposable': False, 'is_free': True, 'reason': 'Invalid Recipient', 'result': 'undeliverable'}}
+```
+
+## Node.js
+Uses the older [request](https://www.npmjs.com/package/request) module:
+
+```
+node validateRecipient.js
+error: null
+statusCode: 200
+body: {"results":{"valid":false,"is_role":true,"is_disposable":false,"is_free":true,"reason":"Invalid Recipient","result":"undeliverable"}}
 ```
 
 See [SparkPost documentation](https://www.sparkpost.com/docs/recipient-validation/integration-guide/) for more information on how to use Recipient Validation.
