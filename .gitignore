@@ -2,3 +2,6 @@
 snippets/recipient-validation/setenvs.sh
 snippets/recipient-validation/node_modules
 snippets/recipient-validation/Pipfile.lock
+snippets/recipient-validation/bin
+snippets/recipient-validation/obj
+.vscode/tasks.json

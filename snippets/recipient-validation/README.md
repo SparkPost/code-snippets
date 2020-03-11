@@ -35,7 +35,7 @@ python3 validateRecipient.py
 Shows both the older [request](https://www.npmjs.com/package/request) package and the newer [axios](https://www.npmjs.com/package/axios) package.
 
 ```
- node validateRecipient.js
+node validateRecipient.js
 
 Axios:
 {
@@ -62,6 +62,13 @@ This example unmarshals the results into a struct variable, then prints it.
 go run validateRecipient.go
 Status: 200
 {Results:{Valid:false IsRole:true IsDisposable:false IsFree:true Reason:Invalid Recipient Result:undeliverable} Errors:[]}
+```
+
+## C#
+Uses the [GetStringAsync](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient.getstringasync?view=netframework-4.8) call.
+```
+dotnet run
+{"results":{"valid":false,"is_role":true,"is_disposable":false,"is_free":true,"reason":"Invalid Recipient","result":"undeliverable"}}
 ```
 
 See [SparkPost documentation](https://www.sparkpost.com/docs/recipient-validation/integration-guide/) for more information on how to use Recipient Validation.
