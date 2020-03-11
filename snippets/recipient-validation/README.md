@@ -41,4 +41,13 @@ statusCode: 200
 body: {"results":{"valid":false,"is_role":true,"is_disposable":false,"is_free":true,"reason":"Invalid Recipient","result":"undeliverable"}}
 ```
 
+## Go
+This example unmarshals the results into a struct variable, then prints it.
+
+```
+go run validateRecipient.go
+Status: 200
+{Results:{Valid:false IsRole:true IsDisposable:false IsFree:true Reason:Invalid Recipient Result:undeliverable} Errors:[]}
+```
+
 See [SparkPost documentation](https://www.sparkpost.com/docs/recipient-validation/integration-guide/) for more information on how to use Recipient Validation.
