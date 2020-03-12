@@ -72,7 +72,6 @@ dotnet run
 ```
 
 ## Ruby
-
 Using the [Net::http](https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html) library.
 ```
 ruby validateRecipient.rb
@@ -80,6 +79,14 @@ ruby validateRecipient.rb
 {"results":{"valid":false,"is_role":true,"is_disposable":false,"is_free":true,"reason":"Invalid Recipient","result":"undeliverable"}}
 ```
 
-TODO: Ruby, Perl, Elixir, Java, ...
+## Java
+Using the [HttpURLConnection library](https://docs.oracle.com/javase/10/docs/api/java/net/HttpURLConnection.html). Compile and run:
+```
+javac ValidateRecipient.java && java ValidateRecipient
+200 OK
+{"results":{"valid":false,"is_role":true,"is_disposable":false,"is_free":true,"reason":"Invalid Recipient","result":"undeliverable"}}
+```
+
+TODO: Perl, Rust, Elixir, Scala, Clozure, ...
 
 See [SparkPost documentation](https://www.sparkpost.com/docs/recipient-validation/integration-guide/) for more information on how to use Recipient Validation.
