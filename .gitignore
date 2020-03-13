@@ -6,3 +6,13 @@ snippets/recipient-validation/bin
 snippets/recipient-validation/obj
 .vscode/*
 snippets/recipient-validation/ValidateRecipient.class
+# Rust work must be done in separate sub-directory
+snippets/recipient-validation/validate_recipient/target/*
+snippets/recipient-validation/validate_recipient/.vscode
+# temporarily ignore this
+snippets/recipient-validation/validate_recipient/Cargo.lock
+# C
+snippets/recipient-validation/c/curl-7.69.1/
+snippets/recipient-validation/c/validateRecipient
+snippets/recipient-validation/c/validateRecipient.dSYM/
+snippets/recipient-validation/c/.vscode/*

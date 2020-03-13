@@ -87,6 +87,32 @@ javac ValidateRecipient.java && java ValidateRecipient
 {"results":{"valid":false,"is_role":true,"is_disposable":false,"is_free":true,"reason":"Invalid Recipient","result":"undeliverable"}}
 ```
 
-TODO: Perl, Rust, Elixir, Scala, Clozure, ...
+## C / C++
+Using the [libcurl](https://curl.haxx.se/libcurl/) library; tested with `curl-7.69.1.tar.gz`. Downloaded and built with `make` (below on OSX, referencing `openssl` installed with `brew`). The `curl-config` tool can be used to find out your configuration and linking option flags.
+
+```
+cd curl-7.69.1/
+./configure --enable-hidden-symbols --enable-threaded-resolver --with-gssapi --with-ssl=/usr/local/opt/openssl@1.1/
+```
+
+Check that the `configure` step shows you have `SSL` feature enabled, then:
+```
+make
+make install
+```
+
+Compile the app, linking required libraries:
+```
+gcc validateRecipient.cpp -o validateRecipient -lcurl
+```
+
+Run the app:
+```
+./validateRecipient
+{"results":{"valid":false,"is_role":true,"is_disposable":false,"is_free":true,"reason":"Invalid Recipient","result":"undeliverable"}}
+Response: 200
+```
+
+TODO: Perl, Rust, VB,
 
 See [SparkPost documentation](https://www.sparkpost.com/docs/recipient-validation/integration-guide/) for more information on how to use Recipient Validation.
