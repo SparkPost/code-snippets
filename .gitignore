@@ -1,10 +1,12 @@
-.vscode/launch.json
+# vscode
+.vscode/*
+snippets/recipient-validation/.vscode/*
+
 snippets/recipient-validation/setenvs.sh
 snippets/recipient-validation/node_modules
 snippets/recipient-validation/Pipfile.lock
 snippets/recipient-validation/bin
 snippets/recipient-validation/obj
-.vscode/*
 snippets/recipient-validation/ValidateRecipient.class
 # Rust work must be done in separate sub-directory
 snippets/recipient-validation/validate_recipient/target/*
@@ -16,3 +18,10 @@ snippets/recipient-validation/c/curl-7.69.1/
 snippets/recipient-validation/c/validateRecipient
 snippets/recipient-validation/c/validateRecipient.dSYM/
 snippets/recipient-validation/c/.vscode/*
+# Lua
+snippets/recipient-validation/.luarocks/*
+snippets/recipient-validation/lua_modules/*
+# OSX finder
+snippets/.DS_Store
+snippets/recipient-validation/.DS_Store
+snippets/recipient-validation/.vscode/settings.json

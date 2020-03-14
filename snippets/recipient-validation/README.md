@@ -90,19 +90,20 @@ javac ValidateRecipient.java && java ValidateRecipient
 ## C / C++
 Using the [libcurl](https://curl.haxx.se/libcurl/) library; tested with `curl-7.69.1.tar.gz`. Downloaded and built with `make` (below on OSX, referencing `openssl` installed with `brew`). The `curl-config` tool can be used to find out your configuration and linking option flags.
 
-```
+```bash
 cd curl-7.69.1/
 ./configure --enable-hidden-symbols --enable-threaded-resolver --with-gssapi --with-ssl=/usr/local/opt/openssl@1.1/
 ```
 
 Check that the `configure` step shows you have `SSL` feature enabled, then:
-```
+```bash
 make
 make install
+cd ..
 ```
 
 Compile the app, linking required libraries:
-```
+```bash
 gcc validateRecipient.cpp -o validateRecipient -lcurl
 ```
 
@@ -113,6 +114,27 @@ Run the app:
 Response: 200
 ```
 
-TODO: Perl, Rust, VB,
+## Lua
+Using Lua 5.3 and [luarocks](https://luarocks.org/) package manager, the following installs needed `luasocket` and `luasec` packages globally into `/usr/local`.
+
+```bash
+# installation - yours may need to differ!
+brew install luarocks
+sudo luarocks install luasocket
+# link to openssl library (same as C code used)
+sudo luarocks install luasec OPENSSL_DIR=/usr/local/opt/openssl@1.1/
+# Set the following to suit your installation
+export LUA_PATH="/usr/local/share/lua/5.3/?.lua;/usr/local/share/lua/5.3/?/init.lua;/usr/local/lib/lua/5.3/?.lua;/usr/local/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua;"
+```
+
+```
+lua validateRecipient.lua
+HTTP/1.1 200 OK
+{"results":{"valid":false,"is_role":true,"is_disposable":false,"is_free":true,"reason":"Invalid Recipient","result":"undeliverable"}}
+```
+
+TODO: Perl, VB, Rust, ...
+
+You made is this far, you earn the honorary badge of [Codefox 🦊](https://en.wikipedia.org/wiki/The_Hedgehog_and_the_Fox)!
 
 See [SparkPost documentation](https://www.sparkpost.com/docs/recipient-validation/integration-guide/) for more information on how to use Recipient Validation.
