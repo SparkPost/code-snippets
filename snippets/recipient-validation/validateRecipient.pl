@@ -2,6 +2,12 @@
 # API call example. See https://www.sparkpost.com/docs/recipient-validation/integration-guide/
 # set to api.eu.sparkpost.com for EU accounts
 
+# Do this first:
+# cpan install LWP::Protocol::https
+# cpan install JSON
+# export SPARKPOST_API_KEY=191c<redactedredacted>c531c3
+
+
 use strict;
 use warnings;
 
