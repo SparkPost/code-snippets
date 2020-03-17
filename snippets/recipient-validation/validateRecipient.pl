@@ -11,37 +11,38 @@ use strict;
 use warnings;
 use LWP::UserAgent;
 use HTTP::Request;
-use JSON;
-use Data::Dumper;
+#use JSON;                             # Only needed for a structured output
+#use Data::Dumper;                     # Only needed for a structured output
+
+my @DArr;
 my $url = "https://api.sparkpost.com/api/v1/recipient-validation/single/";
 my $apiKey =  $ENV{'SPARKPOST_API_KEY'};  # API key from environment variable. Should have Recipient Validation rights
-my $recipient = "test\@gmail.com";
+my $recipient = 'test@gmail.com';
 my $shorturl = "api.sparkpost.com";
-my $certpath = "/etc/pki/tls/certs/";
-
-
-# specify a CA path
-my $ua = LWP::UserAgent->new(
-    ssl_opts => {
-        SSL_ca_path     => "$certpath",
-        verify_hostname => 1,
-    },
-    agent => "Perl API Client/1.0"
+my $ua = LWP::UserAgent->new;
+my $req = HTTP::Request->new(
+    'GET' =>
+      $url.$recipient,
+    [
+        'Authorization'  => "$apiKey",
+        'Accept'         => "application/json",
+        'Host'           => "$shorturl:443",
+    ],
 );
+my $resp = $ua->request($req);
+if ($resp->is_success) {
+  my $message = $resp->decoded_content;
+#  my $json = JSON->new;                # Only needed for a structured output]
+#  my $data = $json->decode($message);  # Only needed for a structured output
 
+  print $message,"\r\n";
+#  print Dumper($data);                 # Only needed for a structured output
 
-my @headers = (
-   'Authorization' => "$apiKey");
-
-my $res = $ua->get($url.$recipient,@headers);
-
-if ($res->is_success) {
-  my $message = $res->decoded_content;
-  my $json = JSON->new;
-  my $data = $json->decode($message);
-  print Dumper($data);
 }
 else {
-print "HTTP GET error code: ", $res->code, "\n";
-print "HTTP GET error message: ", $res->message, "\n";
+  print "HTTP GET error code: ", $resp->code, "\n";
+  print "HTTP GET error message: ", $resp->message, "\n";
 }
+
+
+__END__
