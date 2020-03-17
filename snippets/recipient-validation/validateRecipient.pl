@@ -2,19 +2,13 @@
 # API call example. See https://www.sparkpost.com/docs/recipient-validation/integration-guide/
 # set to api.eu.sparkpost.com for EU accounts
 
-# Do this first:
-# cpan install LWP::Protocol::https
-# cpan install JSON
-# export SPARKPOST_API_KEY=191c<redactedredacted>c531c3
-
 use strict;
 use warnings;
 use LWP::UserAgent;
 use HTTP::Request;
-#use JSON;                             # Only needed for a structured output
-#use Data::Dumper;                     # Only needed for a structured output
+#use JSON;                              # Only needed for a structured output
+#use Data::Dumper;                      # Only needed for a structured output
 
-my @DArr;
 my $url = "https://api.sparkpost.com/api/v1/recipient-validation/single/";
 my $apiKey =  $ENV{'SPARKPOST_API_KEY'};  # API key from environment variable. Should have Recipient Validation rights
 my $recipient = 'test@gmail.com';
