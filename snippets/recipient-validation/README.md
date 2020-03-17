@@ -133,7 +133,62 @@ HTTP/1.1 200 OK
 {"results":{"valid":false,"is_role":true,"is_disposable":false,"is_free":true,"reason":"Invalid Recipient","result":"undeliverable"}}
 ```
 
-TODO: Perl, VB, Rust, ...
+
+## Perl
+Using Perl v5.16.3 with a little help from `LWP::UserAgent` and `HTTP::Request` 
+
+```bash
+# Do this first:
+# use CPAN to install the Perl helpers
+cpan install LWP JSON HTTP::Request Data::Dumper
+# save the SparkPost API key to an environment variable
+export SPARKPOST_API_KEY=191c<redactedredacted>c531c3
+```
+
+Pull the file then run it with `perl validateRecipient.pl`
+
+The output should be an unformatted JSON string:
+```bash
+{"results":{"valid":false,"is_role":true,"is_disposable":false,"is_free":true,"reason":"Invalid Recipient","result":"undeliverable"}}
+```
+
+You can make that a little prettier with some formatting.
+1) Remove the comments on these lines:
+```bash
+#use JSON;                             # Only needed for a structured output
+#use Data::Dumper;                     # Only needed for a structured output
+...
+#  my $json = JSON->new;                # Only needed for a structured output]
+#  my $data = $json->decode($message);  # Only needed for a structured output
+#  print Dumper($data);                 # Only needed for a structured output
+```
+2) Comment this line:
+```bash
+  print $message,"\r\n";
+```
+
+And you will get an output like this:
+```bash
+$VAR1 = {
+          'results' => {
+                         'is_disposable' => bless( do{\(my $o = 0)}, 'JSON::PP::Boolean' ),
+                         'reason' => 'Invalid Recipient',
+                         'result' => 'undeliverable',
+                         'is_free' => bless( do{\(my $o = 1)}, 'JSON::PP::Boolean' ),
+                         'is_role' => $VAR1->{'results'}{'is_free'},
+                         'valid' => $VAR1->{'results'}{'is_disposable'}
+                       }
+        };
+```
+
+If you want to make it real pretty, you can iterate through that array with a foreach and add formatting.  Take note of the Perl weirdness with booleans - `bless( do{\(my $o = 0)}, 'JSON::PP::Boolean'`. A line like that with `$o = 0` should be interpreted as `FALSE` and  where you see `$o = 1` interpret that as `TRUE`.   
+
+If you are acting on the results programatically, the raw JSON string should be all you really need.
+
+
+
+
+TODO: VB, Rust, ...
 
 You made is this far, you earn the honorary badge of [Codefox 🦊](https://en.wikipedia.org/wiki/The_Hedgehog_and_the_Fox)!
 
