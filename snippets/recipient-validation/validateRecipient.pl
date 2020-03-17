@@ -7,13 +7,12 @@
 # cpan install JSON
 # export SPARKPOST_API_KEY=191c<redactedredacted>c531c3
 
-
 use strict;
 use warnings;
-
 use LWP::UserAgent;
 use HTTP::Request;
 use JSON;
+use Data::Dumper;
 my $url = "https://api.sparkpost.com/api/v1/recipient-validation/single/";
 my $apiKey =  $ENV{'SPARKPOST_API_KEY'};  # API key from environment variable. Should have Recipient Validation rights
 my $recipient = "test\@gmail.com";
@@ -40,7 +39,7 @@ if ($res->is_success) {
   my $message = $res->decoded_content;
   my $json = JSON->new;
   my $data = $json->decode($message);
-  return $data;
+  print Dumper($data);
 }
 else {
 print "HTTP GET error code: ", $res->code, "\n";
