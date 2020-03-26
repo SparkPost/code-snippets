@@ -12,26 +12,26 @@ export SPARKPOST_API_KEY="###YOUR API KEY HERE###"
 
 Each example prints the results in that language's native format.
 
-## Bash script (`curl`)
+## [Bash script (`curl`)](validateRecipient.sh)
 ```
 ./validateRecipient.sh
 {"results":{"valid":false,"is_role":true,"is_disposable":false,"is_free":true,"reason":"Invalid Recipient","result":"undeliverable"}}
 ```
 
-## PHP
+## [PHP](validateRecipient.php)
 ```
 php validateRecipient.php
 string(133) "{"results":{"valid":false,"is_role":true,"is_disposable":false,"is_free":true,"reason":"Invalid Recipient","result":"undeliverable"}}"
 ```
 
-## Python
+## [Python](validateRecipient.py)
 Uses [requests](https://requests.readthedocs.io/en/master/) module; See `Pipfile`.
 ```
 python3 validateRecipient.py
 {'results': {'valid': False, 'is_role': True, 'is_disposable': False, 'is_free': True, 'reason': 'Invalid Recipient', 'result': 'undeliverable'}}
 ```
 
-## Node.js
+## [Node.js](validateRecipient.js)
 Shows both the older [request](https://www.npmjs.com/package/request) package and the newer [axios](https://www.npmjs.com/package/axios) package.
 
 ```
@@ -55,7 +55,7 @@ statusCode: 200
 body: {"results":{"valid":false,"is_role":true,"is_disposable":false,"is_free":true,"reason":"Invalid Recipient","result":"undeliverable"}}
 ```
 
-## Go
+## [Go](validateRecipient.go)
 This example unmarshals the results into a struct variable, then prints it.
 
 ```
@@ -64,14 +64,14 @@ Status: 200
 {Results:{Valid:false IsRole:true IsDisposable:false IsFree:true Reason:Invalid Recipient Result:undeliverable} Errors:[]}
 ```
 
-## C#
+## [C#](validateRecipient.cs)
 Uses the [GetStringAsync](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient.getstringasync?view=netframework-4.8) call.
 ```
 dotnet run
 {"results":{"valid":false,"is_role":true,"is_disposable":false,"is_free":true,"reason":"Invalid Recipient","result":"undeliverable"}}
 ```
 
-## Ruby
+## [Ruby](validateRecipient.rb)
 Using the [Net::http](https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html) library.
 ```
 ruby validateRecipient.rb
@@ -79,7 +79,7 @@ ruby validateRecipient.rb
 {"results":{"valid":false,"is_role":true,"is_disposable":false,"is_free":true,"reason":"Invalid Recipient","result":"undeliverable"}}
 ```
 
-## Java
+## [Java](validateRecipient.java)
 Using the [HttpURLConnection library](https://docs.oracle.com/javase/10/docs/api/java/net/HttpURLConnection.html). Compile and run:
 ```
 javac ValidateRecipient.java && java ValidateRecipient
@@ -87,7 +87,7 @@ javac ValidateRecipient.java && java ValidateRecipient
 {"results":{"valid":false,"is_role":true,"is_disposable":false,"is_free":true,"reason":"Invalid Recipient","result":"undeliverable"}}
 ```
 
-## C / C++
+## [C / C++](c/validateRecipient.cpp)
 Using the [libcurl](https://curl.haxx.se/libcurl/) library; tested with `curl-7.69.1.tar.gz`. Downloaded and built with `make` (below on OSX, referencing `openssl` installed with `brew`). The `curl-config` tool can be used to find out your configuration and linking option flags.
 
 ```bash
@@ -114,7 +114,7 @@ Run the app:
 Response: 200
 ```
 
-## Lua
+## [Lua](validateRecipient.lua)
 Using Lua 5.3 and [luarocks](https://luarocks.org/) package manager, the following installs needed `luasocket` and `luasec` packages globally into `/usr/local`.
 
 ```bash
@@ -134,7 +134,7 @@ HTTP/1.1 200 OK
 ```
 
 
-## Perl
+## [Perl](validateRecipient.pl)
 Using Perl v5.16.3 with a little help from `LWP::UserAgent` and `HTTP::Request` 
 
 ```bash
@@ -181,14 +181,15 @@ $VAR1 = {
         };
 ```
 
-If you want to make it real pretty, you can iterate through that array with a foreach and add formatting.  Take note of the Perl weirdness with booleans - `bless( do{\(my $o = 0)}, 'JSON::PP::Boolean'`. A line like that with `$o = 0` should be interpreted as `FALSE` and  where you see `$o = 1` interpret that as `TRUE`.   
+If you want to make it real pretty, you can iterate through that array with a foreach and add formatting.  Take note of the Perl weirdness with booleans - `bless( do{\(my $o = 0)}, 'JSON::PP::Boolean'`. A line like that with `$o = 0` should be interpreted as `FALSE` and  where you see `$o = 1` interpret that as `TRUE`.
 
 If you are acting on the results programatically, the raw JSON string should be all you really need.
 
+## [Visual Basic .net](VB/validateRecipient.vb)
 
+This is experimental code, not yet tested.
 
-
-TODO: VB, Rust, ...
+TODO: Rust, Elixir, ...
 
 You made is this far, you earn the honorary badge of [Codefox 🦊](https://en.wikipedia.org/wiki/The_Hedgehog_and_the_Fox)!
 

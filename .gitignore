@@ -25,3 +25,5 @@ snippets/recipient-validation/lua_modules/*
 snippets/.DS_Store
 snippets/recipient-validation/.DS_Store
 snippets/recipient-validation/.vscode/settings.json
+snippets/.vscode/launch.json
+.DS_Store
