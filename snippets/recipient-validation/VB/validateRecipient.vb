@@ -1,27 +1,36 @@
-Imports System
+Imports System.IO
 Imports System.Net
-Imports System.Net.Http
-Imports System.Threading.Tasks
 
-' This is experimental code produced from the .cs app using https://converter.telerik.com/
-Namespace recipient_validation
-    Class Program
-        Const url As String = "https://api.sparkpost.com/api/v1/recipient-validation/single/"
-        Shared ReadOnly client As HttpClient = New HttpClient()
+Namespace Recipient_Validation
+    Public Class RVsample
+        Public Shared Sub Main()
+            Const url As String = "https://api.sparkpost.com/api/v1/recipient-validation/single/recipient="
+            Dim apiKey As String = System.Environment.GetEnvironmentVariable("SPARKPOST_API_KEY", EnvironmentVariableTarget.User)
 
-        Private Shared Async Function Main(ByVal args As String()) As Task
+            ' replace this line with some loop to pull from a data source
             Dim recipient As String = "test@gmail.com"
-            Dim apiKey As String = Environment.GetEnvironmentVariable("SPARKPOST_API_KEY")
 
+            ' Create a request for the URL.  
+            Dim client As WebRequest = WebRequest.Create(url & recipient)
+            Console.WriteLine(client.Headers)
+            client.Headers.Add("Authorization", apiKey)
+            client.Headers.Add("Accept", "application/json")
+            ' may need to tweak this error handling
             Try
-                client.DefaultRequestHeaders.Add("Authorization", apiKey)
-                client.DefaultRequestHeaders.Add("Accept", "application/json")
-                Dim result = Await client.GetStringAsync(url & recipient)
-                Console.WriteLine(result)
-            Catch e As HttpRequestException
+                Using dataStream As Stream = client.GetResponse().GetResponseStream()
+                    ' Open the stream using a StreamReader for easy access.  
+                    Dim reader As New StreamReader(dataStream)
+                    ' Read the content.  
+                    Dim responseFromServer As String = reader.ReadToEnd()
+                    ' Display the content.  
+                    Console.WriteLine(responseFromServer)
+                End Using
+                ' client.GetResponse().Close()
+            Catch e As HttpListenerException
                 Console.WriteLine(vbLf & "Exception Caught!")
                 Console.WriteLine("Message :{0} ", e.Message)
             End Try
-        End Function
+
+        End Sub
     End Class
 End Namespace
