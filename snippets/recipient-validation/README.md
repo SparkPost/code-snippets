@@ -192,12 +192,13 @@ The easiest path to success is to use the Visual Studio SDK in a Windows platfor
 Paste the code from the repo into VS, buid and execute.
 
 In order to make this code work, you need to add a Windows environment variable.  The easiest way to do this is to open a command prompt and use setx.exe like this: 
-C:\Users\me>setx SPARKPOST_API_KEY  "142<redacted<redacted>c531c3"
+`C:\Users\me>setx SPARKPOST_API_KEY  "142<redacted\><redacted\>c531c3"`
 In Windows 10, this is applied to your user environment, but is not immediately available in the current command session, so testing it with a “set” will not work, but it will be available to the code.
 
 If you build and execute the code included in the repo, the result should look like this:
+```bash
 {"results":{"valid":true,"is_role":false,"is_disposable":false,"is_free":true,"result":"neutral"}}
-
+```
 
 ## Summary
 You made is this far, you earn the honorary badge of [Codefox 🦊](https://en.wikipedia.org/wiki/The_Hedgehog_and_the_Fox)!
