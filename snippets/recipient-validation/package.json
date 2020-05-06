@@ -1,0 +1,28 @@
+{
+  "name": "sparkpost-recipient-validation",
+  "version": "1.0.0",
+  "description": "Example using the SparkPost Recipient Validation API",
+  "main": "validateRecipient.js",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SparkPost/code-snippets.git"
+  },
+  "keywords": [
+    "Recipient",
+    "Validation",
+    "SparkPost"
+  ],
+  "author": "Steve Tuck",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/SparkPost/code-snippets/issues"
+  },
+  "homepage": "https://github.com/SparkPost/code-snippets#readme"
+}
