@@ -200,6 +200,10 @@ If you build and execute the code included in the repo, the result should look l
 {"results":{"valid":true,"is_role":false,"is_disposable":false,"is_free":true,"result":"neutral"}}
 ```
 
+## [Rust](rust_recipient_validation/src/main.rs)
+
+This uses the reqwest library with Tokio async (similar to [this](https://rust-lang-nursery.github.io/rust-cookbook/web/clients/requests.html)), as it does not seem possible to set request headers on the blocking `get` call.
+
 ## Summary
 You made is this far, you earn the honorary badge of [Codefox 🦊](https://en.wikipedia.org/wiki/The_Hedgehog_and_the_Fox)!
 

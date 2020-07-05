@@ -3,7 +3,6 @@
 use reqwest;
 use std::env;
 use tokio;
-//use std::collections::HashMap;
 
 #[tokio::main]
 async fn main() -> Result<(), reqwest::Error> {
@@ -15,15 +14,18 @@ async fn main() -> Result<(), reqwest::Error> {
     // API key from environment variable. Should have Recipient Validation rights
     match env::var("SPARKPOST_API_KEY") {
         Ok(api_key) => {
-            println!("{:#?} {:#?} {:#?}", url, api_key, recipient);
-
             let req_url = String::from(url) + recipient;
-            // h = {'Authorization': apiKey, 'Accept': 'application/json'}
-
             let client = reqwest::Client::new();
-            let resp = client.get(&req_url).send().await?;
-            // .json::<HashMap<String, String>>()
-            println!("{:#?}", resp);
+            let res = client
+                .get(&req_url)
+                .header("Authorization", api_key)
+                .header("Accept", "application/json")
+                .send()
+                .await?;
+
+            println!("Status: {}", res.status());
+            let body = res.text().await?;
+            println!("Body:\n{}", body);
         }
         Err(e) => {
             println!("SPARKPOST_API_KEY {}", e);
