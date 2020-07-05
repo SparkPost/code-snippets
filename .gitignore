@@ -8,9 +8,6 @@ snippets/recipient-validation/Pipfile.lock
 snippets/recipient-validation/bin
 snippets/recipient-validation/obj
 snippets/recipient-validation/ValidateRecipient.class
-# Rust work must be done in separate sub-directory
-snippets/recipient-validation/validate_recipient/target/*
-snippets/recipient-validation/validate_recipient/.vscode
 # temporarily ignore this
 snippets/recipient-validation/validate_recipient/Cargo.lock
 # C
@@ -27,3 +24,6 @@ snippets/recipient-validation/.DS_Store
 snippets/recipient-validation/.vscode/settings.json
 snippets/.vscode/launch.json
 .DS_Store
+# Rust work must be done in separate sub-directory
+snippets/recipient-validation/rust_recipient_validation/.vscode/
+snippets/recipient-validation/rust_recipient_validation/target
