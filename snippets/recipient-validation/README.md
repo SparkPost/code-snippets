@@ -202,7 +202,7 @@ If you build and execute the code included in the repo, the result should look l
 
 ## [Rust](rust_recipient_validation/src/main.rs)
 
-This uses the reqwest library with Tokio async (similar to [this](https://rust-lang-nursery.github.io/rust-cookbook/web/clients/requests.html)), as it does not seem possible to set request headers on the blocking `get` call.
+This uses the `reqwest` library with `tokio` async (similar to [this](https://rust-lang-nursery.github.io/rust-cookbook/web/clients/requests.html)), as it does not seem possible to set request headers on the blocking `get` call.
 
 The example includes a cargo package manager [configuration file](rust_recipient_validation/Cargo.toml), so you can build and run with:`
 
@@ -212,7 +212,7 @@ cargo run
 
     Finished dev [unoptimized + debuginfo] target(s) in 0.10s
      Running `target/debug/rust_recipient_validation`
-     
+
 Status: 200 OK
 Body:
 {"results":{"valid":false,"is_role":true,"is_disposable":false,"is_free":true,"reason":"Invalid Recipient","result":"undeliverable"}}
