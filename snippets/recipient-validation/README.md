@@ -204,7 +204,7 @@ If you build and execute the code included in the repo, the result should look l
 
 This uses the `reqwest` library with `tokio` async (similar to [this](https://rust-lang-nursery.github.io/rust-cookbook/web/clients/requests.html)), as it does not seem possible to set request headers on the blocking `get` call.
 
-The example includes a cargo package manager [configuration file](rust_recipient_validation/Cargo.toml), so you can build and run with:`
+The example includes a cargo package manager [configuration file](rust_recipient_validation/Cargo.toml), so you can build and run with:
 
 ```
 cd rust_recipient_validation
@@ -217,6 +217,10 @@ Status: 200 OK
 Body:
 {"results":{"valid":false,"is_role":true,"is_disposable":false,"is_free":true,"reason":"Invalid Recipient","result":"undeliverable"}}
 ```
+
+The code uses `std:env` to read the `SPARKPOST_API_KEY` environment variable. A `match` clause handles an undefined key with error reporting. A new `reqwest::Client` is created and an async call issued, followed by an `.await?` (see [here](https://rust-lang.github.io/async-book/01_getting_started/04_async_await_primer.html)). This (rather than the simpler blocking call) seems to be needed to set the request header for authorization.
+
+Response body text is read with a second `.await?` as per [this example](https://dtantsur.github.io/rust-openstack/reqwest/struct.Response.html).
 
 ## Summary
 You made is this far, you earn the honorary badge of [Codefox 🦊](https://en.wikipedia.org/wiki/The_Hedgehog_and_the_Fox)!
