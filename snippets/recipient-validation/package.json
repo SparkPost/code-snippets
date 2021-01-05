@@ -4,7 +4,7 @@
   "description": "Example using the SparkPost Recipient Validation API",
   "main": "validateRecipient.js",
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.21.1"
   },
   "devDependencies": {},
   "scripts": {
